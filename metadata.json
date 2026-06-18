@@ -1,0 +1,6 @@
+{
+  "name": "WORLDCLASS",
+  "description": "WORLDCLASS - Premium modern world-class international travel agency website featuring advanced 3D visual experiences, blogging, SEO management, booking inquiries, and a fully customizable Admin CMS Dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

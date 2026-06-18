@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      window.onerror = function(msg, url, lineNo, columnNo, error) {
+        document.body.innerHTML = '<div style="color:red; padding:20px; font-family:monospace; background:black; position:fixed; top:0; left:0; right:0; bottom:0; z-index:9999;"><h1>Error</h1>' + msg + '<br/><br/>' + url + ':' + lineNo + ':' + columnNo + '<br/><br/><pre>' + (error && error.stack ? error.stack : '') + '</pre></div>';
+        return false;
+      };
+      
+      window.addEventListener("unhandledrejection", function(promiseRejectionEvent) { 
+        document.body.innerHTML = '<div style="color:red; padding:20px; font-family:monospace; background:black; position:fixed; top:0; left:0; right:0; bottom:0; z-index:9999;"><h1>Unhandled Rejection</h1><pre>' + promiseRejectionEvent.reason + '</pre></div>';
+      });
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

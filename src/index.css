@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: var(--color-primary, #0A2540);
+  --color-brand-secondary: var(--color-secondary, #3B82F6);
+  --color-brand-accent: var(--color-accent, #FBBF24);
+  --color-brand-darkbg: var(--color-darkbg, #0B1120);
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-space: "Space Grotesk", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+  --font-outfit: "Outfit", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-darkbg, #0b1120);
+    color: #f3f4f6;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+/* Custom global animations and scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary, #0a2540);
+  border-radius: 9999px;
+  border: 2px solid rgba(15, 23, 42, 0.6);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary, #3b82f6);
+}
+
+/* Glassmorphism Classes */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel {
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.gold-text {
+  color: #FBBF24;
+}
+
+.gold-bg {
+  background-color: #FBBF24;
+}
+
+.ocean-gradient {
+  background: radial-gradient(circle at center, #0A2540 0%, #0B1120 100%);
+}
+
+/* Mesh Gradient Flow */
+@keyframes mesh-pulse {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.15); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.mesh-blob-1 {
+  animation: mesh-pulse 18s infinite ease-in-out;
+}
+
+.mesh-blob-2 {
+  animation: mesh-pulse 24s infinite ease-in-out alternate;
+}
+
+/* Smooth text gradient helper */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
